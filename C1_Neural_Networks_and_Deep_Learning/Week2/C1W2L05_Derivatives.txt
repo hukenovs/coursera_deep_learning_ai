@@ -1,0 +1,136 @@
+Derivatives
+
+(SPEECH)
+In
+
+(DESCRIPTION)
+Text, Basics of Neural Network Programming. Derivatives. Website, deep learning, dot, A.I.
+
+(SPEECH)
+this video, I want to help you gain an intuitive understanding, of calculus and the derivatives.
+
+Now, maybe you're thinking that you haven't seen calculus since your college days, and depending on when you graduated, maybe that was quite some time back.
+
+Now, if that's what you're thinking, don't worry, you don't need a deep understanding of calculus in order to apply new networks and deep learning very effectively.
+
+So, if you're watching this video or some of the later videos and you're wondering, well, is this stuff really for me, this calculus looks really complicated.
+
+My advice to you is the following, which is that, watch the videos and then if you could do the homeworks and complete the programming homeworks successfully, then you can apply deep learning.
+
+In fact, when you see later is that in week four, we'll define a couple of types of functions that will enable you to encapsulate everything that needs to be done with respect to calculus, that these functions called forward functions and backward functions that you learn about.
+
+That lets you put everything you need to know about calculus into these functions, so that you don't need to worry about them anymore beyond that.
+
+But I thought that in this foray into deep learning that this week, we should open up the box and peer a little bit further into the details of calculus.
+
+But really, all you need is an intuitive understanding of this in order to build and successfully apply these algorithms.
+
+Finally, if you are among that maybe smaller group of people that are expert in calculus, if you are very familiar with calculus derivatives, it's probably okay for you to skip this video.
+
+But for everyone else, let's dive in, and try to gain an intuitive understanding of derivatives.
+
+(DESCRIPTION)
+New slide, Intuition about derivatives.
+
+(SPEECH)
+I plotted here the function f(a) equals 3a.
+
+So, it's just a straight line.
+
+To get intuition about derivatives, let's look at a few points on this function.
+
+Let say that a is equal to two.
+
+In that case, f of a, which is equal to three times a is equal to six.
+
+So, if a is equal to two, then f of a will be equal to six.
+
+Let's say we give the value of a just a little bit of a nudge.
+
+I'm going to just bump up a, a little bit, so that it is now 2.001.
+
+So, I'm going to give a like a tiny little nudge, to the right.
+
+So now, let's say 2.001, just plot this into scale, 2.001, this 0.001 difference is too small to show on this plot, just give a little nudge to that right.
+
+Now, f(a), is equal to three times that.
+
+So, it's 6.003, so we plot this over here.
+
+This is not to scale, this is 6.003.
+
+So, if you look at this little triangle here that I'm highlighting in green, what we see is that if I nudge a 0.001 to the right, then f of a goes up by 0.003.
+
+The amounts that f of a, went up is three times as big as the amount that I nudge the a to the right.
+
+So, we're going to say that, the slope or the derivative of the function f of a, at a equals to or when a is equals two to the slope is three.
+
+The term derivative basically means slope, it's just that derivative sounds like a scary and more intimidating word, whereas a slope is a friendlier way to describe the concept of derivative.
+
+So, whenever you hear derivative, just think slope of the function.
+
+More formally, the slope is defined as the height divided by the width of this little triangle that we have in green.
+
+So, this is 0.003 over 0.001, and the fact that the slope is equal to three or the derivative is equal to three, just represents the fact that when you nudge a to the right by 0.001, by tiny amount, the amount at f of a goes up is three times as big as the amount that you nudged it, that you nudged a in the horizontal direction.
+
+So, that's all that the slope of a line is.
+
+Now, let's look at this function at a different point.
+
+Let's say that a is now equal to five.
+
+In that case, f of a, three times a is equal to 15.
+
+So, let's see that again, give a, a nudge to the right.
+
+A tiny little nudge, it's now bumped up to 5.001, f of a is three times that.
+
+So, f of a is equal to 15.003.
+
+So, once again, when I bump a to the right, nudg a to the right by 0.001, f of a goes up three times as much.
+
+So the slope, again, at a = 5, is also three.
+
+So, the way we write this, that the slope of the function f is equal to three: We say, d f(a) da and this just means, the slope of the function f(a) when you nudge the variable a, a tiny little amount, this is equal to three.
+
+An alternative way to write this derivative formula is as follows.
+
+You can also write this as, d da of f(a).
+
+So, whether you put f(a) on top or whether you write it down here, it doesn't matter.
+
+But all this equation means is that, if I nudge a to the right a little bit, I expect f(a) to go up by three times as much as I nudged the value of little a.
+
+Now, for this video I explained derivatives, talking about what happens if we nudged the variable a by 0.001.
+
+If you want a formal mathematical definition of the derivatives: Derivatives are defined with an even smaller value of how much you nudge a to the right.
+
+So, it's not 0.001.
+
+It's not 0.000001.
+
+It's not 0.00000000 and so on 1.
+
+It's even smaller than that, and the formal definition of derivative says, whenever you nudge a to the right by an infinitesimal amount, basically an infinitely tiny, tiny amount.
+
+If you do that, this f(a) go up three times as much as whatever was the tiny, tiny, tiny amount that you nudged a to the right.
+
+So, that's actually the formal definition of a derivative.
+
+But for the purposes of our intuitive understanding, which I'll talk about nudging a to the right by this small amount 0.001.
+
+Even if it's 0.001 isn't exactly tiny, tiny infinitesimal.
+
+Now, one property of the derivative is that, no matter where you take the slope of this function, it is equal to three, whether a is equal to two or a is equal to five.
+
+The slope of this function is equal to three, meaning that whatever is the value of a, if you increase it by 0.001, the value of f of a goes up by three times as much.
+
+So, this function has a safe slope everywhere.
+
+One way to see that is that, wherever you draw this little triangle.
+
+The height, divided by the width, always has a ratio of three to one.
+
+So, I hope this gives you a sense of what the slope or the derivative of a function means for a straight line, where in this example the slope of the function was three everywhere.
+
+In the next video, let's take a look at a slightly more complex example, where the slope to the function can be different at different points on the function.
