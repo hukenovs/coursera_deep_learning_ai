@@ -1,0 +1,100 @@
+Deep L-layer neural network
+
+(SPEECH)
+Welcome
+
+(DESCRIPTION)
+Text, deep learning dot AI. Deep neural networks, deep L-layer neural network
+
+(SPEECH)
+to the fourth week of this course.
+
+By now, you've seen four promulgation and back promulgation in the context of a neural network, with a single hidden layer, as well as logistic regression, and you've learned about vectorization, and when it's important to initialize the ways randomly.
+
+If you've done the past couple weeks homework, you've also implemented and seen some of these ideas work for yourself.
+
+So by now, you've actually seen most of the ideas you need to implement a deep neural network.
+
+What we're going to do this week, is take those ideas and put them together so that you'll be able to implement your own deep neural network.
+
+Because this week's problem exercise is longer, it just has been more work, I'm going to keep the videos for this week shorter as you can get through the videos a little bit more quickly, and then have more time to do a significant problem exercise at then end, which I hope will leave you having thoughts deep in neural network, that if you feel proud of.
+
+So what is a deep neural network?
+
+You've seen this picture for logistic regression and you've also seen neural networks with a single hidden layer.
+
+So
+
+(DESCRIPTION)
+Two diagrams. Logistic regression, three input features are passed into one node which produces an output label. 1 hidden layer, the same, but all three input features are passed into each of three nodes in a preliminary layer, and the outputs of those nodes are passed into the single node as in the standard logistic regression
+
+(SPEECH)
+here's an example of a neural network with two hidden layers and
+
+(DESCRIPTION)
+Diagram with 2 hidden layers. Now the three input features are passed into each node in a layer of four nodes, and the outputs of each of those nodes are passed into each of a layer of three nodes, before combining into a single-node logistic regression. A final diagram with 5 hidden layers. In this case, the first four layers all have four nodes
+
+(SPEECH)
+a neural network with 5 hidden layers.
+
+We say that logistic regression is a very "shallow" model, whereas this model here is a much deeper model, and shallow versus depth is a matter of degree.
+
+So neural network of a single hidden layer, this would be a 2 layer neural network.
+
+Remember when we count layers in a neural network, we don't count the input layer, we just count the hidden layers as was the output layer.
+
+So, this would be a 2 layer neural network is still quite shallow, but not as shallow as logistic regression.
+
+Technically logistic regression is a one layer neural network, we could then, but over the last several years the AI, on the machine learning community, has realized that there are functions that very deep neural networks can learn that shallower models are often unable to.
+
+Although for any given problem, it might be hard to predict in advance exactly how deep in your network you would want.
+
+So it would be reasonable to try logistic regression, try one and then two hidden layers, and view the number of hidden layers as another hyper parameter that you could try a variety of values of, and evaluate on all that across validation data, or on your development set.
+
+See more about that later as well.
+
+Let's now go through the notation we used to describe deep neural networks.
+
+Here's
+
+(DESCRIPTION)
+Diagram with three hidden layers. First two have five nodes each, third has three
+
+(SPEECH)
+is a one, two, three, four layer neural network, With three hidden layers, and the number of units in these hidden layers are I guess 5, 5, 3, and then there's one one upper unit.
+
+So the notation we're going to use, is going to use capital L ,to denote the number of layers in the network.
+
+So in this case, L = 4, and so does the number of layers, and we're going to use N superscript [l] to denote the number of nodes, or the number of units in layer lowercase l.
+
+So if we index this, the input as layer "0".
+
+This is layer 1, this is layer 2, this is layer 3, and this is layer 4.
+
+Then we have that, for example, n[1], that would be this, the first is in there will equal 5, because we have 5 hidden units there.
+
+For
+
+(DESCRIPTION)
+Notations include a letter followed by a numerical or variable index in superscript brackets
+
+(SPEECH)
+this one, we have the n[2], the number of units in the second hidden layer is also equal to 5, n[3] = 3, and n[4] = n[L] this number of upper units is 01, because your capital L is equal to four, and we're also going to have here that for the input layer n[0] = nx = 3.
+
+So that's the notation we use to describe the number of nodes we have in different layers.
+
+For each layer L, we're also going to use a[l] to denote the activations in layer l.
+
+So we'll see later that in for propagation, you end up computing a[l] as the activation g(z[l]) and perhaps the activation is indexed by the layer l as well, and then we'll use W[l ]to denote, the weights for computing the value z[l] in layer l, and similarly, b[l] is used to compute z [l].
+
+Finally, just to wrap up on the notation, the input features are called x, but x is also the activations of layer zero, so a[0] = x, and the activation of the final layer, a[L] = y-hat.
+
+So a[L] is equal to the predicted output to prediction y-hat to the neural network.
+
+So you now know what a deep neural network looks like, as was the notation we'll use to describe and to compute with deep networks.
+
+I know we've introduced a lot of notation in this video, but if you ever forget what some symbol means, we've also posted on the course website, a notation sheet or a notation guide, that you can use to look up what these different symbols mean.
+
+Next, I'd like to describe what forward propagation in this type of network looks like.
+
+Let's go into the next video.

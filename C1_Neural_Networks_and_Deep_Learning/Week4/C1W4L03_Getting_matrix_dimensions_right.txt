@@ -1,0 +1,143 @@
+Getting your matrix dimensions right
+
+(DESCRIPTION)
+Text, Deep Neural Networks. Getting your matrix dimensions right. Website, deep learning, dot, A.I.
+
+(SPEECH)
+When implementing a deep neural network, one of the debugging tools I often use to check the correctness of my code is to pull a piece of paper, and just work through the dimensions and matrix I'm working with.
+
+So let me show you how to do that, since I hope this will make it easier for you to implement your deep nets as well.
+
+(DESCRIPTION)
+New slide, Parameters W to the L, and B to the L.
+
+(SPEECH)
+Capital L is equal to 5, right, counting quickly, not counting the input layer, there are five layers here, so four hidden layers and one output layer.
+
+And so if you implement forward propagation, the first step will be z1 = w1x + b1.
+
+So let's ignore the bias terms b for now, and focus on the parameters w.
+
+Now this first hidden layer has three hidden units, so this is layer 0, layer 1, layer 2, layer 3, layer 4, and layer 5.
+
+So using the notation we had from the previous video, we have that n1, which is the number of hidden units in layer 1, is equal to 3.
+
+And here we would have the n2 is equal to 5, n3 is equal to 4, n4 is equal to 2, and n5 is equal to 1.
+
+And so far we've only seen neural networks with a single output unit, but in later courses, we'll talk about neutral networks with multiple output units as well.
+
+And finally, for the input layer, we also have n0 = nx = 2.
+
+So now, let's think about the dimensions of z, w, and x.
+
+z is the vector of activations for this first hidden layer, so z is going to be 3 by 1, it's going to be a 3-dimensional vector.
+
+So I'm going to write it a n1 by 1-dimensional vector, n1 by 1-dimensional matrix, all right, so 3 by 1 in this case.
+
+Now how about the input features x, x, we have two input features.
+
+So x is in this example 2 by 1, but more generally, it would be n0 by 1.
+
+So what we need is for the matrix w1 to be something that when we multiply an n0 by 1 vector to it, we get an n1 by 1 vector, right?
+
+So you have sort of a three dimensional vector equals something times a two dimensional vector.
+
+And so by the rules of matrix multiplication, this has got be a 3 by 2 matrix.
+
+Right, because a 3 by 2 matrix times a 2 by 1 matrix, or times the 2 by 1 vector, that gives you a 3 by 1 vector.
+
+And more generally, this is going to be an n1 by n0 dimensional matrix.
+
+So what we figured out here is that the dimensions of w1 has to be n1 by n0.
+
+And more generally, the dimensions of wL must be nL by nL minus 1.
+
+So for example, the dimensions of w2, for this, it would have to be 5 by 3, or it would be n2 by n1.
+
+Because we're going to compute z2 as w2 times a1, and again, let's ignore the bias for now.
+
+And so this is going to be 3 by 1, and we need this to be 5 by 1, and so this had better be 5 by 3.
+
+And similarly, w3 is really the dimension of the next layer, comma, the dimension of the previous layer, so this is going to be 4 by 5, w4 Is going to be 2 by 4, and w5 is going to be 1 by 2, okay?
+
+So the general formula to check is that when you're implementing the matrix for layer L, that the dimension of that matrix be nL by nL-1.
+
+Now let's think about the dimension of this vector b.
+
+This is going to be a 3 by 1 vector, so you have to add that to another 3 by 1 vector in order to get a 3 by 1 vector as the output.
+
+Or in this example, we need to add this, this is going to be 5 by 1, so there's going to be another 5 by 1 vector.
+
+In order for the sum of these two things I have in the boxes to be itself a 5 by 1 vector.
+
+So the more general rule is that in the example on the left, b1 is n1 by 1, right, that's 3 by 1, and in the second example, this is n2 by 1.
+
+And so the more general case is that bL should be nL by 1 dimensional.
+
+So hopefully these two equations help you to double check that the dimensions of your matrices w, as well as your vectors p, are the correct dimensions.
+
+And of course, if you're implementing back propagation, then the dimensions of dw should be the same as the dimension of w.
+
+So dw should be the same dimension as w, and db should be the same dimension as b.
+
+Now the other key set of quantities whose dimensions to check are these z, x, as well as a of L, which we didn't talk too much about here.
+
+But because z of L is equal to g of a of L, applied element wise, then z and a should have the same dimension in these types of networks.
+
+Now let's see what happens when you have a vectorized implementation that looks at multiple examples at a time.
+
+Even for a vectorized implementation, of course, the dimensions of wb, dw, and db will stay the same.
+
+But the dimensions of z, a, as well as x will change a bit in your vectorized
+
+(DESCRIPTION)
+New slide, Vectorized implementation.
+
+(SPEECH)
+implementation.
+
+So previously, we had z1 = w1x+b1 where this was n1 by 1, this was n1 by n0, x was n0 by 1, and b was n1 by 1.
+
+Now, in a vectorized implementation, you would have z1 = w1x + b1.
+
+Where now z1 is obtained by taking the z1 for the individual examples, so there's z11, z12, up to z1m, and stacking them as follows, and this gives you z1.
+
+So the dimension of z1 is that, instead of being n1 by 1, it ends up being n1 by m, and m is the size you're trying to set.
+
+The dimensions of w1 stays the same, so it's still n1 by n0.
+
+And x, instead of being n0 by 1 is now all your training examples stacked horizontally.
+
+So it's now n 0 by m, and so you notice that when you take a n1 by n0 matrix and multiply that by an n0 by m matrix.
+
+That together they actually give you an n1 by m dimensional matrix, as expected.
+
+Now, the final detail is that b1 is still n1 by 1, but when you take this and add it to b, then through Python broadcasting, this will get duplicated and turn n1 by m matrix, and then add the element wise.
+
+So on the previous slide, we talked about the dimensions of wb, dw, and db.
+
+Here, what we see is that whereas zL as well as aL are of dimension nL by 1, we have now instead that ZL as well AL are nL by m.
+
+And a special case of this is when L is equal to 0, in which case A0, which is equal to just your training set input features X, is going to be equal to n0 by m as expected.
+
+And of course when you're implementing this in backpropagation, we'll see later you, end up computing dZ as well as dA.
+
+And so these will of course have the same dimension as Z and A.
+
+So I hope the little exercise we went through helps clarify the dimensions that the various matrices you'd be working with.
+
+When you implement backpropagation for a deep neural network, so long as you work through your code and make sure that all the matrices' dimensions are consistent.
+
+That will usually help, it'll go some ways toward eliminating some cause of possible bugs.
+
+So I hope that exercise for figuring out the dimensions of various matrices you'll been working with is helpful.
+
+When you implement a deep neural network, if you keep straight the dimensions of these various matrices and vectors you're working with.
+
+Hopefully they'll help you eliminate some cause of possible bugs, it certainly helps me get my code right.
+
+So next, we've now seen some of the mechanics of how to do forward propagation in a neural network.
+
+But why are deep neural networks so effective, and why do they do better than shallow representations?
+
+Let's spend a few minutes in the next video to discuss that.

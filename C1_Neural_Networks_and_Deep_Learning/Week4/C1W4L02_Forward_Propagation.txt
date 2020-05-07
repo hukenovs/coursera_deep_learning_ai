@@ -1,0 +1,126 @@
+Forward Propagation in a Deep Network
+
+(SPEECH)
+In
+
+(DESCRIPTION)
+Text, Deep Neural Networks. Forward Propogation in a Deep Network. Website, deep learning, dot, A.I.
+
+(SPEECH)
+the last video, we described what is a deep L-layer neural network and also talked about the notation we use to describe such networks.
+
+In this video, you see how you can perform forward propagation, in a deep network.
+
+(DESCRIPTION)
+New slide, Forward propagation in a deep network.
+
+(SPEECH)
+As usual, let's first go over what forward propagation will look like for a single training example x, and then later on we'll talk about the vectorized version, where you want to carry out forward propagation on the entire training set at the same time.
+
+But given a single training example x, here's how you compute the activations of the first layer.
+
+So for this first layer, you compute z1 equals w1 times x plus b1.
+
+So w1 and b1 are the parameters that affect the activations in layer one.
+
+This is layer one of the neural network, and then you compute the activations for that layer to be equal to g of z1.
+
+The activation function g depends on what layer you're at and maybe what index set as the activation function from layer one.
+
+So if you do that, you've now computed the activations for layer one.
+
+How about layer two? Say that layer.
+
+Well, you would then compute z2 equals w2 a1 plus b2.
+
+Then, so the activation of layer two is the y matrix times the outputs of layer one.
+
+So, it's that value, plus the bias vector for layer two.
+
+Then a2 equals the activation function applied to z2.
+
+Okay? So that's it for layer two, and so on and so forth.
+
+Until you get to the upper layer, that's layer four.
+
+Where you would have that z4 is equal to the parameters for that layer times the activations from the previous layer, plus that bias vector.
+
+Then similarly, a4 equals g of z4.
+
+So, that's how you compute your estimated output, y hat.
+
+So, just one thing to notice, x here is also equal to a0, because the input feature vector x is also the activations of layer zero.
+
+So we scratch out x.
+
+When I cross out x and put a0 here, then all of these equations basically look the same.
+
+The general rule is that zl is equal to wl times a of l minus 1 plus bl.
+
+It's one there. And then, the activations for that layer is the activation function applied to the values of z.
+
+So, that's the general forward propagation equation.
+
+So, we've done all this for a single training example.
+
+How about for doing it in a vectorized way for the whole training set at the same time?
+
+The equations look quite similar as before.
+
+For the first layer, you would have capital Z1 equals w1 times capital X plus b1.
+
+Then, A1 equals g of Z1.
+
+Bear in mind that X is equal to A0.
+
+These are just the training examples stacked in different columns.
+
+You could take this, let me scratch out X, they can put A0 there.
+
+Then for the next layer, looks similar, Z2 equals w2 A1 plus b2 and A2 equals g of Z2.
+
+We're just taking these vectors z or a and so on, and stacking them up.
+
+This is z vector for the first training example, z vector for the second training example, and so on, down to the nth training example, stacking these and columns and calling this capital Z.
+
+Similarly, for capital A, just as capital X.
+
+All the training examples are column vectors stack left to right.
+
+In this process, you end up with y hat which is equal to g of Z4, this is also equal to A4.
+
+That's the predictions on all of your training examples stacked horizontally.
+
+So just to summarize on notation, I'm going to modify this up here.
+
+A notation allows us to replace lowercase z and a with the uppercase counterparts, is that already looks like a capital Z.
+
+That gives you the vectorized version of forward propagation that you carry out on the entire training set at a time, where A0 is X.
+
+Now, if you look at this implementation of vectorization, it looks like that there is going to be a For loop here.
+
+So therefore l equals 1-4.
+
+For L equals 1 through capital L. Then you have to compute the activations for layer one, then layer two, then for layer three, and then the layer four.
+
+So, seems that there is a For loop here.
+
+I know that when implementing neural networks, we usually want to get rid of explicit For loops.
+
+But this is one place where I don't think there's any way to implement this without an explicit For loop.
+
+So when implementing forward propagation, it is perfectly okay to have a For loop to compute the activations for layer one, then layer two, then layer three, then layer four.
+
+No one knows, and I don't think there is any way to do this without a For loop that goes from one to capital L, from one through the total number of layers in the neural network.
+
+So, in this place, it's perfectly okay to have an explicit For loop.
+
+So, that's it for the notation for deep neural networks, as well as how to do forward propagation in these networks.
+
+If the pieces we've seen so far looks a little bit familiar to you, that's because what we're seeing is taking a piece very similar to what you've seen in the neural network with a single hidden layer and just repeating that more times.
+
+Now, it turns out that we implement a deep neural network, one of the ways to increase your odds of having a bug-free implementation is to think very systematic and carefully about the matrix dimensions you're working with.
+
+So, when I'm trying to debug my own code, I'll often pull a piece of paper, and just think carefully through, so the dimensions of the matrix I'm working with.
+
+Let's see how you could do that in the next video.
