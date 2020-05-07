@@ -1,0 +1,67 @@
+
+
+Weight Initialization for Deep Networks
+
+(DESCRIPTION)
+Text, Setting up your optimization problem. Weight initialization for deep networks. Website, deep learning, dot, A.I.
+
+(SPEECH)
+In the last video you saw how very deep neural networks can have the problems of vanishing and exploding gradients.
+
+It turns out that a partial solution to this, doesn't solve it entirely but helps a lot, is better or more careful choice of the random initialization for your neural network.
+
+To understand this lets start with the example of initializing the ways for a single neuron and then we're going to generalize this to a deep network.
+
+(DESCRIPTION)
+New slide, Single neuron example. Four X variables, stacked vertically, point to a single circle. Underneath the circle is the equation A, equals, G, Z.
+
+(SPEECH)
+Let's go through this with an example with just a single neuron and then we'll talk about the deep net later.
+
+So a single neuron you might input four features x1 through x4 and then you have some a=g(z) and end it up with some y and later on for a deeper net you know these inputs will be right, some layer a(l), but for now let's just call this x for now.
+
+So z is going to be equal to w1x1 + w2x2 +... + I guess WnXn and let's set b=0 so you know lets just ignore b for now.
+
+So in order to make z not blow up and not become too small you notice that the larger n is, the smaller you want Wi to be, right?
+
+Because z is the sum of the WiXi and so if you're adding up a lot of these terms you want each of these terms to be smaller.
+
+One reasonable thing to do would be to set the variance of Wi to be equal to 1 over n, where n is the number of input features that's going into a neuron.
+
+So in practice, what you can do is set the weight matrix W for a certain layer to be np.random.randn you know, and then whatever the shape of the matrix is for this out here, and then times square root of 1 over the number of features that I fed into each neuron and there else is going to be n(l-1) because that's the number of units that I'm feeding into each of the units and they are l. It turns out that if you're using a value activation function that rather than 1 over n it turns out that, set in the variance that 2 over n works a little bit better.
+
+So you often see that in initialization especially if you're using a value activation function so if gl(z) is ReLu(z), oh and it depend on how familiar you are with random variables.
+
+It turns out that something, a Gaussian random variable and then multiplying it by a square root of this, that says the variance to be quoted this way, to be to 2 over n and the reason I went from n to this n superscript l-1 was, in this example with logistic regression which is to input features but the more general case they are l would have an l-1 inputs each of the units in that layer.
+
+So if the input features of activations are roughly mean 0 and standard variance and variance 1 then this would cause z to also take on a similar scale and this doesn't solve, but it definitely helps reduce the vanishing, exploding gradients problem because it's trying to set each of the weight matrices w you know so that it's not too much bigger than 1 and not too much less than 1 so it doesn't explode or vanish too quickly.
+
+(DESCRIPTION)
+A second column is written, titled, other variants.
+
+(SPEECH)
+I've just mention some other variants.
+
+The version we just described is assuming a value activation function and this by a paper by [inaudible].
+
+A few other variants, if you are using a TanH activation function then there's a paper that shows that instead of using the constant 2 it's better use the constant 1 and so 1 over this instead of 2 and so you multiply it by the square root of this.
+
+So this square root term whoever plays this term and you use this if you're using a TanH activation function.
+
+This is called Xavier initialization.
+
+And another version we're taught by Yoshua Bengio and his colleagues, you might see in some papers, but is to use this formula, which you know has some other theoretical justification, but I would say if you're using a value activation function, which is really the most common activation function, I would use this formula.
+
+If you're using TanH you could try this version instead and some authors will also use this but in practice I think all of these formulas just give you a starting point, it gives you a default value to use for the variance of the initialization of your weight matrices.
+
+If you wish the variance here, this variance parameter could be another thing that you could tune of your hyperparameters so you could have another parameter that multiplies into this formula and tune that multiplier as part of your hyperparameter surge.
+
+Sometimes tuning the hyperparameter has a modest size effect.
+
+It's not one of the first hyperparameters I would usually try to tune but I've also seen some problems with tuning this you know helps a reasonable amount but this is usually lower down for me in terms of how important it is relative to the other hyperparameters you can tune.
+
+So I hope that gives you some intuition about the problem of vanishing or exploding gradients as well as how choosing a reasonable scaling for how you initialize the weights.
+
+Hopefully that makes your weights you know not explode too quickly and not decay to zero too quickly so you can train a reasonably deep network without the weights or the gradients exploding or vanishing too much.
+
+When you train deep networks this is another trick that will help you make your neural networks trained much.
