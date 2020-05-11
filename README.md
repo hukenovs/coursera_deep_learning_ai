@@ -17,7 +17,7 @@ This is my repo with progress in Deep Learning specialization by Andrew Ng. Repo
 #### TODO: Complete 2-5 courses!
 
 - [Course 1: Neural Networks and Deep Learning](https://www.coursera.org/account/accomplishments/records/98VC74JAA99K "Neural Networks and Deep Learning")
-- [Course 2: Improving Deep Neural Networks](https://www.coursera.org/account/accomplishments/records/ "Improving Deep Neural Networks")
+- [Course 2: Improving Deep Neural Networks](https://www.coursera.org/account/accomplishments/records/UT4UT7BAB9GZ "Improving Deep Neural Networks")
 - [Course 3: Structuring Machine Learning Projects](https://www.coursera.org/account/accomplishments/records/ "Structuring Machine Learning Projects")
 - [Course 4: Convolutional Neural Networks](https://www.coursera.org/account/accomplishments/records/ "Convolutional Neural Networks")
 - [Course 5: Sequence Models](https://www.coursera.org/account/accomplishments/records/ "Sequence Models")
