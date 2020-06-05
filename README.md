@@ -20,9 +20,9 @@ This is my repo with progress in Deep Learning specialization by Andrew Ng. Repo
 - [Course 2: Improving Deep Neural Networks](https://www.coursera.org/account/accomplishments/records/UT4UT7BAB9GZ "Improving Deep Neural Networks")
 - [Course 3: Structuring Machine Learning Projects](https://www.coursera.org/account/accomplishments/records/XQVAWNGLKXDW "Structuring Machine Learning Projects")
 - [Course 4: Convolutional Neural Networks](https://www.coursera.org/account/accomplishments/records/4KKHUXNH66JV "Convolutional Neural Networks")
-- [Course 5: Sequence Models](https://www.coursera.org/account/accomplishments/records/ "Sequence Models")
+- [Course 5: Sequence Models](https://www.coursera.org/account/accomplishments/records/8TCTRRX62HFH "Sequence Models")
 
-- [Specialization Deep Learning Specialization](https://www.coursera.org/account/accomplishments/specialization/ "Specialization Deep Learning Specialization")
+- [Specialization Deep Learning Specialization](https://www.coursera.org/account/accomplishments/specialization/2YTZ8T6CC7P6 "Specialization Deep Learning Specialization")
 ___
 
 ## Specialization: [Deep Learning Specialization](https://www.coursera.org/specializations/deep-learning "Deep Learning Specialization")
